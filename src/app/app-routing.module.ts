@@ -25,6 +25,8 @@ import { VerificarEmailComponent } from './vistas/verificar-email/verificar-emai
 import { LogrosComponent } from './vistas/logros/logros.component';
 import { authGuard } from './core/guardias/auth.guard';
 import { PagoExitosoComponent } from './vistas/pago-exitoso/pago-exitoso.component';
+import { FormAdminComponent } from './vistas/form-admin/form-admin.component';
+import { ListadoDeEjerciciosComponent } from './vistas/listado-de-ejercicios/listado-de-ejercicios.component';
 
 const routes: Routes = [
   {
@@ -153,6 +155,22 @@ const routes: Routes = [
       {
         path: 'pago-exitoso',
         component: PagoExitosoComponent,
+      },
+      {
+        path: 'listarEjercicios',
+        component: ListadoDeEjerciciosComponent
+      },
+      {
+        path: 'crear',
+        component: FormAdminComponent
+      },
+      {
+        path: 'editar/:id',
+        component: FormAdminComponent
+      },
+        {
+        path: 'eliminar/:id',
+        component: FormAdminComponent
       }
     ]
   },

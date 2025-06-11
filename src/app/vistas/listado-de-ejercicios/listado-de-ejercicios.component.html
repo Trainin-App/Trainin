@@ -1,0 +1,45 @@
+<body>
+<div class="text-center mb-3">
+<h1 class="admin-title">Bienvenido administrador</h1>
+</div>
+<div class="text-center mb-3">
+    <app-boton-trainin
+                routerLink="/crear"
+                clase="btn btn-trainin"
+                tipo="button"
+              >
+                Crear ejercicio</app-boton-trainin
+              >
+</div>
+
+<div class="text-center mb-3 w-100">
+<table class="table table-striped listado-ejercicios" *ngIf="ejercicios.length">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+    <tr *ngFor="let e of ejercicios">
+      <td>{{ e.id }}</td>
+      <td>{{ e.nombre }}</td>
+      <td>
+
+        <button (click)="editar(e)" class="btn btn-sm btn-secondary" aria-label="Editar">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+
+        <button (click)="eliminar(e)" class="btn btn-sm btn-danger" aria-label="Eliminar">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>

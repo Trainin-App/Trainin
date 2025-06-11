@@ -27,6 +27,8 @@ import { VerificarEmailComponent } from './verificar-email/verificar-email.compo
 import { LogrosComponent } from './logros/logros.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PagoExitosoComponent } from './pago-exitoso/pago-exitoso.component';
+import { ListadoDeEjerciciosComponent } from './listado-de-ejercicios/listado-de-ejercicios.component';
+import { FormAdminComponent } from './form-admin/form-admin.component';
 
 @NgModule({
 
@@ -52,6 +54,8 @@ import { PagoExitosoComponent } from './pago-exitoso/pago-exitoso.component';
     LogrosComponent,
     PerfilComponent,
     PagoExitosoComponent,
+    ListadoDeEjerciciosComponent,
+    FormAdminComponent,
   ],
 
   imports: [

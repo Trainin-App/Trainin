@@ -1,0 +1,78 @@
+<main>
+  <form class="form-wrapper" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-3">
+
+      <label>Nombre</label>
+      <input formControlName="Nombre" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Descripción</label>
+      <textarea formControlName="Descripcion" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Video</label>
+      <input formControlName="Video" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>valorMet</label>
+      <input type="number" formControlName="ValorMet" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Landmark</label>
+      <input formControlName="Landmark" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Imagen</label>
+      <textarea formControlName="Imagen" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Grupo Muscular</label><br>
+      <ng-container *ngFor="let g of grupos">
+        <input #chk type="checkbox" [checked]="idsGrupoMuscular.value.includes(g.id)"
+          (change)="onCheckboxChange(idsGrupoMuscular, chk.checked, g.id)">
+        {{ g.descripcion }}
+      </ng-container>
+    </div>
+
+    <div class="mb-3">
+      <label>Categorías</label><br>
+      <ng-container *ngFor="let c of categorias">
+        <input #chk type="checkbox" [checked]="idsCategorias.value.includes(c.id)"
+          (change)="onCheckboxChange(idsCategorias, chk.checked, c.id)">
+        {{ c.nombre }}
+      </ng-container>
+
+      <div class="mb-3">
+        <label>Tiene Corrección</label>
+        <select class="form-control" formControlName="TieneCorreccion">
+          <Option value=1>1: Tiene Corrección</Option>
+          <Option value=0>2: No Tiene Corrección</Option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Tiene Corrección Premium</label>
+        <select class="form-control" formControlName="CorreccionPremium">
+          <Option value=1>1: Tiene Corrección Premium</Option>
+          <Option value=0>2: No Tiene Corrección Premium</Option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Tipo de Ejercicio</label>
+        <select class="form-control" formControlName="IdTipoEjercicio">
+          <Option value=1>1: Ejercicio por tiempo</Option>
+          <Option value=2>2: Ejercicio por repetición</Option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn btn-success" [disabled]="form.invalid">
+      {{ isEdit ? 'Guardar cambios' : 'Crear ejercicio' }}
+    </button>
+  </form>
+</main>

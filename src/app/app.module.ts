@@ -7,7 +7,7 @@ import { VistasModule } from './vistas/vistas.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './core/interceptores/auth.interceptor';
 import { LogroObtenidoComponent } from "./compartido/componentes/logro-obtenido/logro-obtenido.component";
 
@@ -21,6 +21,7 @@ import { LogroObtenidoComponent } from "./compartido/componentes/logro-obtenido/
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot({
         easeTime: 300,
         extendedTimeOut: 15000,
